@@ -1,28 +1,41 @@
+import router from "../router";
 import { createStore } from "vuex";
 
 export default createStore({
   state: {
-    user: null,
-    content: {},
+    user: localStorage.getItem("user") || null,
+    products: [],
   },
   mutations: {
     updateUser(state, user) {
-      this.state.user = user;
+      state.user = user;
+      localStorage.setItem("user", JSON.stringify(user));
     },
-    updateContent(state, content) {
-      this.state.content.push(content);
+    updateContent(state, product) {
+      state.products.push(product);
+    },
+    clear(state) {
+      localStorage.clear();
+      state.user = null;
+      router.push("/login");
     },
   },
   actions: {
     setUser(context, user) {
       context.commit("updateUser", user);
+      router.push("/");
     },
     removeUser(context) {
       context.commit("updateUser", null);
     },
-    addContent(context, content) {
-      context.commit("updateContent", content);
+    addContent(context, product) {
+      context.commit("updateContent", product);
+    },
+    logout(context) {
+      context.commit("clear");
     },
   },
-  modules: {},
+  getters: {
+    isLoggedIn: (state) => state.user,
+  },
 });

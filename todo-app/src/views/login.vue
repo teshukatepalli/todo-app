@@ -25,8 +25,7 @@ export default {
   methods: {
     submit() {
       if (this.user.username && this.user.password) {
-        localStorage.setItem("user", JSON.stringify(this.user));
-        this.$router.push("/");
+        this.$store.dispatch("setUser", this.user);
       } else {
         alert("Please enter username && password");
       }

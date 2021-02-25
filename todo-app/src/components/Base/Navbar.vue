@@ -7,14 +7,8 @@
 </template>
 
 <script>
-// import { mapState } from "vuex";
 export default {
   name: "Navbar",
-  // computed: {
-  //   ...mapState({
-  //     user: (state) => state.user,
-  //   }),
-  // },
 };
 </script>
 <style scoped>

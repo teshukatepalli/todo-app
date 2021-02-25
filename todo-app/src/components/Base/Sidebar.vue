@@ -8,6 +8,7 @@
           </router-link>
         </li>
       </template>
+      <li @click="logout()">Log Out</li>
     </ul>
   </div>
 </template>
@@ -26,11 +27,6 @@ export default {
           link: "/",
           img_slug: "",
         },
-        {
-          name: "Log Out",
-          link: "/login",
-          img_slug: "",
-        },
       ],
     };
   },
@@ -42,7 +38,6 @@ export default {
   },
   methods: {
     logout() {
-      localStorage.clear();
       this.$store.dispatch("logout");
     },
     setActive(name) {

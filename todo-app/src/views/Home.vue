@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 import Navbar from "../components/Base/Navbar";
 import Sidebar from "../components/Base/Sidebar";
 export default {
@@ -29,6 +30,14 @@ export default {
     return {
       message: "Base component",
     };
+  },
+  computed: {
+    ...mapState({
+      user: (state) => state.user,
+    }),
+  },
+  created() {
+    !this.user ? this.$router.push("/login") : null;
   },
 };
 </script>
