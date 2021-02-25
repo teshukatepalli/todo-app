@@ -46,34 +46,28 @@ export default {
   },
 };
 </script>
-<style scoped>
-.sidebar {
-  height: 100vh;
-  padding-top: 100px;
-}
-.sidebar ul {
-  list-style-type: none;
-  padding: 0px;
-  margin: 0px;
-}
-.sidebar ul li {
-  margin: 0.5em 0em;
-  padding: 5px;
-  /* border: 1px solid #333; */
-  display: flex;
-  align-items: center;
-  transition: 0s all ease-in-out;
-  /* justify-content: center; */
-  cursor: pointer;
-}
-.sidebar ul li a {
-  text-decoration: none;
-  color: #333;
-  padding: 10px;
-}
-.sidebar ul .active {
-  background-color: #7db719;
-  border-radius: 10px;
-  transition: 0.3s all ease-in-out;
-}
+<style lang="stylus" scoped>
+@media only screen and (min-width: 787px)
+  .sidebar
+    height 100vh
+    padding-top 100px
+    ul
+      list-style-type none
+      padding 0px
+      margin 0px
+      li
+        margin 0.5em 0em
+        padding 5px
+        display flex
+        align-items center
+        transition 0s all ease-in-out
+        cursor pointer
+        a
+          text-decoration none
+          color #333
+          padding 10px
+    .active
+      background-color #7db719
+      border-radius 10px
+      transition 0.3s all ease-in-out
 </style>

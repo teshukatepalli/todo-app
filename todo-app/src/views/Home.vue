@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="body-height">
         <div class="row">
-          <div class="col-md-2 col-sm-4 sidebar-border">
+          <div class="col-md-2 sidebar-border">
             <div class="sticky">
               <Sidebar />
             </div>
@@ -42,20 +42,22 @@ export default {
 };
 </script>
 
-<style scoped>
-.body-height {
-  height: 100vh;
-}
-.sticky {
-  position: sticky;
-  top: 0;
-}
-.sidebar-border {
-  border-right: 1px solid #ebebeb;
-}
+<style lang="stylus" scoped>
+.body-height
+  height 100vh
 
-.body-content {
-  padding-top: 100px;
-  min-height: 100vh;
-}
+.sticky
+  position sticky
+  top 0
+
+.sidebar-border
+  display none
+
+.body-content
+  padding-top 100px
+  min-height 100vh
+@media only screen and (min-width: 787px)
+  .sidebar-border
+    display block
+    border-right 1px solid #ebebeb
 </style>

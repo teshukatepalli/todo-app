@@ -22,7 +22,7 @@
       </tbody>
     </table>
     <p v-else>No products available</p>
-    <modal :view="show" @hide="toggleModal()"></modal>
+    <modal :view="show" type="modal" @hide="toggleModal()"></modal>
   </div>
 </template>
 
@@ -50,16 +50,15 @@ export default {
 };
 </script>
 
-<style scoped>
-.Content {
-  padding: 10px;
-}
-.Content-heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-table {
-  max-width: 300px;
-}
+<style lang="stylus" scoped>
+.Content
+  padding 10px
+
+.Content-heading
+  display flex
+  align-items center
+  justify-content space-between
+
+table
+  max-width 300px
 </style>
