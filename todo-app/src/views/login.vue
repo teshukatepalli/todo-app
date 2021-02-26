@@ -20,14 +20,22 @@ export default {
         username: "",
         password: "",
       },
+      default_value: "admin",
     };
   },
   methods: {
     submit() {
-      if (this.user.username && this.user.password) {
+      if (
+        this.user.username === this.default_value &&
+        this.user.password === this.default_value
+      ) {
         this.$store.dispatch("setUser", this.user);
       } else {
-        alert("Please enter username && password");
+        alert("Please enter 'admin' in username & password");
+        this.user = {
+          username: "",
+          password: "",
+        };
       }
     },
   },
