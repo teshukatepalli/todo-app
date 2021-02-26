@@ -34,6 +34,6 @@ npm run test:e2e
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### PPublish URL
+### Publish URL
 
 http://todo-ap.s3-website.ap-south-1.amazonaws.com/
